@@ -1,0 +1,53 @@
+{
+  "name": "result-back",
+  "version": "1.0.0",
+  "description": "admin panel built with Express, Knex, Tailwind, EJS, PostgreSQL, Webpack, and more.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "concurrently \"nodemon main.js\" \"npm run watch-css\"",
+    "build-css": "postcss src/styles/main.css -o src/public/css/style.css",
+    "watch-css": "postcss src/styles/main.css -o src/public/css/style.css --watch",
+    "build-js": "webpack --mode development",
+    "watch-js": "webpack --mode development --watch",
+    "build": "npm run build-css && npm run build-js",
+    "knex-migrate": "knex migrate:latest",
+    "knex-seed": "knex seed:run"
+  },
+  "keywords": [
+    "express",
+    "ejs",
+    "tailwind",
+    "knex",
+    "postgresql",
+    "webpack",
+    "admin-panel"
+  ],
+  "author": "Faizullin Abdukhakim",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.19.1",
+    "express-session": "^1.18.0",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "pg": "^8.11.3",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "css-loader": "^6.10.0",
+    "css-minimizer-webpack-plugin": "^6.0.0",
+    "mini-css-extract-plugin": "^2.8.1",
+    "nodemon": "^3.1.0",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^3.3.4",
+    "tailwindcss": "^3.4.1",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
