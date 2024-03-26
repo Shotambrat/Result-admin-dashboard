@@ -9,7 +9,6 @@ module.exports = {
       password: process.env.DB_PASSWORD,
       host:     process.env.DB_HOST,
       port:     process.env.DB_PORT || 4444,
-      ssl:      { rejectUnauthorized: false } // Для подключений к базам данных, которые требуют SSL
     },
     migrations: {
       tableName: 'knex_migrations',

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Список статей</title>
+    <link href="/css/style.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <div class="container mx-auto p-4">
+      <h1 class="text-2xl font-semibold mb-6">Список статей</h1>
+
+      <!-- Поиск статей -->
+      <div class="flex mb-4 h-8 md:h-16">
+        <input
+          type="text"
+          placeholder="Поиск статей"
+          class="p-2 border rounded w-full"
+        />
+        <button
+          class="ml-2 w-[200px] px-1 py-1 text-[13px] md:text-[18px] bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Создать статью
+        </button>
+      </div>
+
+      <!-- Список статей -->
+      <div class="bg-white rounded shadow">
+        <div class="p-4 border-b">
+          <p class="text-lg font-semibold text-gray-800">
+            Почему SMM важен для врачей
+          </p>
+          <hr class="md:hidden">
+          <p class="text-gray-600">
+            SMM - сейчас не отъемлемая часть всего маркетинга, теплых
+            клиентов...
+          </p>
+        </div>
+        <div class="flex items-center justify-between p-4">
+
+            <div class="flex flex-col md:flex-row md:justify-between">
+                <div class="flex">
+                    <span class="text-sm text-gray-600 hidden md:flex">Категория: </span>
+                    <span class="text-sm text-gray-600 font-bold">SMM</span>
+                </div>
+                <div class="flex md:ml-[400px]">
+                    <span class="text-sm text-gray-600 hidden md:flex">Дата создания:</span>
+                    <span class="text-sm text-gray-600">20.03.2024</span>
+                </div>
+            </div>
+            <div>
+                <button
+                  class="py-2 w-[100px] text-sm bg-blue-500 text-white rounded hover:bg-blue-600"
+                >
+                  Редактировать
+                </button>
+                <button
+                  class="px-4 py-2 text-sm bg-red-500 text-white rounded hover:bg-red-600 ml-1"
+                >
+                  Удалить
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Здесь могут быть другие статьи -->
+    </div>
+  </body>
+</html>

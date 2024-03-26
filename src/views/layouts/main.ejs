@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
-    <!-- Подключение Tailwind CSS -->
-    <link href="../../public/css/style.css" rel="stylesheet">
-</head>
-<body>
-    <% include ../partials/header %>
+  <head>
+    <% include('../partials/header.ejs') %>
+  </head>
+  <body>
+    <% if (locals.navigation && locals.navigation === true) { %> <%-
+    include('./partials/navbar-main.ejs') %> <% } %>
 
-    <main>
-        <%- body %>
-    </main>
-
-    <% include ../partials/footer %>
-
+    <main class="bg-gray-50 dark:bg-gray-900"><%- body %></main>
     <!-- Подключение JavaScript -->
-    <script src="/js/script.js"></script>
-</body>
+  </body>
 </html>

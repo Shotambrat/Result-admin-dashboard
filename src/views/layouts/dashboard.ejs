@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="/dist/bundle.js" defer></script>
+</head>
+<body class="overflow-hidden bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-200">
+    <div id="app" class="flex flex-col min-h-screen">
+        <%- include(`../partials/navbar.ejs`) %>
+        <div class="flex-1 flex mt-2">
+            <%- include('../partials/sidebar.ejs') %>
+            <main class="flex-grow ml-4">
+                <%- body %>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
