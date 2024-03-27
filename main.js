@@ -7,11 +7,13 @@ const bcrypt = require('bcrypt');
 const secretKey = process.env.SECRET_KEY;
 const apiRoutes = require('./src/server/routes/api');
 const expressLayouts = require('express-ejs-layouts');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 4444;
 
 // Настройка парсинга тела запроса
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', apiRoutes);
@@ -75,6 +77,12 @@ app.get('/', (req, res) => {
 
 app.get('/articles', (req, res) => {
   res.render("articles/articles", {
+    layout: path.join(__dirname, "./src/views/layouts/dashboard"),
+  });
+});
+
+app.get('/articles/article', (req, res) => {
+  res.render("articles/article", {
     layout: path.join(__dirname, "./src/views/layouts/dashboard"),
   });
 });

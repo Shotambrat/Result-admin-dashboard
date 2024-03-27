@@ -1,12 +1,16 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const articlesController = require('../controllers/articleControllers');
+const multer  = require('multer');
+
+const articlesController = require("../controllers/articleControllers");
 // const casesController = require('../controllers/casesController');
 // const usersController = require('../controllers/usersController');
 
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 // Маршруты для статей
-router.get('/articles', articlesController.getAllArticles);
-router.post('/articles', articlesController.createArticle);
+router.get("/getallarticles", articlesController.getAllArticles);
+router.post("/createarticles", upload.array('img_data'), articlesController.createArticle);
 // router.get('/articles/:id', articlesController.getArticleById);
 // router.put('/articles/:id', articlesController.updateArticle);
 // router.delete('/articles/:id', articlesController.deleteArticle);

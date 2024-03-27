@@ -1,13 +1,25 @@
-const knex = require('../../db/db');
+const knex = require("../../db/db");
 
 exports.getAllArticles = () => {
-    return knex('articles').select('*');
+  return knex("articles").select("*");
 };
 
-exports.createArticle = ({ title, content, author }) => {
-    return knex('articles').insert({
+exports.createArticle = ({
+  title,
+  description,
+  category,
+  createdate,
+  plan,
+  img_data
+}) => {
+  return knex("articles")
+    .insert({
         title,
-        content,
-        author
-    }).returning('id');
+        description,
+        category,
+        createdate: new Date(createdate),
+        plan, // Уже в формате JSON
+        img_data
+    })
+    .returning("id");
 };

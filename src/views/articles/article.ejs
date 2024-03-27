@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Создать статью</title>
+    <link href="/css/style.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <div class="container mx-auto p-8">
+      <div
+        class="w-full max-w-2xl mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      >
+        <div class="mb-4">
+          <h1 class="text-xl font-bold mb-2">Новая статья</h1>
+        </div>
+        <form id="articleForm" enctype="multipart/form-data">
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="title"
+            >
+              Название статьи
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="title"
+              name="title"
+              type="text"
+              placeholder="Введите название статьи"
+              maxlength="100"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="description"
+            >
+              Описание
+            </label>
+            <textarea
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="description"
+              name="description"
+              placeholder="Введите описание статьи"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="category"
+            >
+              Категория
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="category"
+              name="category"
+              type="text"
+              placeholder="Категория статьи"
+              maxlength="50"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="createdate"
+            >
+              Дата создания
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="createdate"
+              name="createdate"
+              type="date"
+              required
+            />
+          </div>
+          <div id="plans">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="category"
+            >
+              План статьи
+            </label>
+            <!-- Блок плана статьи №1 -->
+            <div class="plan-block mb-4">
+              <input
+                type="text"
+                name="plan_title_1"
+                class="border p-2 w-full mb-2"
+                placeholder="Заголовок плана статьи №1"
+              />
+              <textarea
+                name="plan_content_1"
+                class="border p-2 w-full"
+                placeholder="Контент плана статьи №1"
+              ></textarea>
+            </div>
+            <!-- Повторить блоки для plan2, plan3, и plan4 -->
+          </div>
+          <button
+            id="addPlanButton"
+            class="mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Добавить план +
+          </button>
+          <div class="mb-4 mt-5">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="img_data"
+            >
+              Изображения
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="img_data"
+              name="img_data"
+              type="file"
+              multiple
+            />
+          </div>
+          <div class="flex items-center justify-between">
+            <button
+              id="saveButton"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Сохранить
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

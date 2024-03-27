@@ -1,12 +1,22 @@
-const articlesDAO = require('../dao/articlesDAO');
+const articlesDAO = require("../dao/articlesDAO");
 
 exports.getAllArticles = async (req, res) => {
-    const articles = await articlesDAO.getAllArticles();
-    res.json(articles);
+  const articles = await articlesDAO.getAllArticles();
+  res.json(articles);
 };
 
 exports.createArticle = async (req, res) => {
-    const { title, content, author } = req.body;
-    const articleId = await articlesDAO.createArticle({ title, content, author });
-    res.status(201).json({ id: articleId });
+  let { title, description, category, createdate, plan} = req.body;
+  let imgData = req.files.map(file => file.buffer);
+
+  console.log(title, description, category, createdate, plan, imgData);
+  const articleId = await articlesDAO.createArticle({
+    title,
+    description,
+    category,
+    createdate,
+    plan,
+    img_data: imgData,
+  });
+  res.status(201).json({ id: articleId });
 };
